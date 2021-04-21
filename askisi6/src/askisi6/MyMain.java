@@ -15,9 +15,10 @@ public class MyMain {
 
 
 	public static void search(String string,int num) {
-		ArrayList<Character> allCharacters = new ArrayList<Character>();  					
+		boolean usedNumbers[] = new boolean[num];				
 		HashMap<Character, Integer> hashMap = new HashMap<Character, Integer>();    
-		boolean usedNumbers[] = new boolean[num];								
+		ArrayList<Character> allCharacters = new ArrayList<Character>();  					
+
 		String num1="" , num2= "", result= "";
 
 		string = string.toUpperCase().replaceAll("\\s", "");
