@@ -9,7 +9,7 @@ public class MyMain {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		search("TO + TO = FOR", 6);
-		search("TOO + TOO = FOR",6);
+		search("TOO + TOO = FOR", 6);
 		search("WON + WON = TOO", 10);
 	}
 
@@ -31,7 +31,7 @@ public class MyMain {
 		addCharacter(allCharacters, result);
 		
 		found = false;
-		printALLChars(allCharacters);
+		printAllChars(allCharacters);
 
 		backtrack(num1, num2, result, allCharacters, hashMap, usedNumbers, 0, num);
 		if (!found)
@@ -48,7 +48,7 @@ public class MyMain {
 		}
 	}
 
-	public static void printALLChars(ArrayList<Character> allChars) {
+	public static void printAllChars(ArrayList<Character> allChars) {
 		System.out.print("All the characters used are : ");
 		for (Character c : allChars) {
 			System.out.print( c + "  ");
