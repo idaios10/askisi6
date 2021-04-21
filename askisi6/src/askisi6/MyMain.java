@@ -18,7 +18,7 @@ public class MyMain {
 		ArrayList<Character> allCharacters = new ArrayList<Character>();  					
 		HashMap<Character, Integer> hashMap = new HashMap<Character, Integer>();    
 		boolean usedNumbers[] = new boolean[num];								
-		String num1, num2, result;
+		String num1="" , num2= "", result= "";
 
 		string = string.toUpperCase().replaceAll("\\s", "");
 		num1 = string.substring(0, string.indexOf("+"));
@@ -65,24 +65,25 @@ public class MyMain {
 
 			if (res == no1 + no2) {
 				found = true;
-				String str = "";
+				String solution = "";
 				for (int i = 0; i < allChars.size(); i++) {
-					str += allChars.get(i) + ": " + hashMap.get(allChars.get(i)) + " ";
+					solution += allChars.get(i) + "=" + hashMap.get(allChars.get(i)) + " ";
 				}
-				System.out.println("Solution: " + str);
+				System.out.println("Solution is :  " + solution);
 			}
 			return ;
 		}
 
-		char char_to_assign = allChars.get(lettersHavingValue);
+		//next char
+		char ch1 = allChars.get(lettersHavingValue);
 
 		for (int i = 0; i < maxNum; i++) {
 			if (usedNumbers[i] == false) {
-				hashMap.put(char_to_assign, i);
+				hashMap.put(ch1, i);
 				usedNumbers[i] = true;
-				backtrack(num1, num2, result, allChars, hashMap, usedNumbers, lettersHavingValue + 1, maxNum);
+				backtrack(num1, num2, result, allChars, hashMap, usedNumbers, lettersHavingValue+1, maxNum);
 				usedNumbers[i] = false;
-				hashMap.remove(char_to_assign);
+				hashMap.remove(ch1);
 			}
 		}
 	}
