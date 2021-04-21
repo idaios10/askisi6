@@ -59,11 +59,12 @@ public class MyMain {
 
 	public static void backtrack(String num1, String num2, String result, ArrayList<Character> allChars,
 			HashMap<Character, Integer> hashMap, boolean[] usedNumbers, int lettersHavingValue, int maxNum) {
+		int no1,no2,res;
 		if (lettersHavingValue == allChars.size()) {
 			
-			int no1 = findNumber(hashMap, num1);
-			int no2 = findNumber(hashMap, num2);
-			int res = findNumber(hashMap, result);
+			no1 = findNumber(hashMap, num1);
+			no2 = findNumber(hashMap, num2);
+			res = findNumber(hashMap, result);
 
 			if (res == no1 + no2) {
 				
@@ -73,6 +74,7 @@ public class MyMain {
 				for (int i = 0; i < allChars.size(); i++) {
 					solution += allChars.get(i) + "=" + hashMap.get(allChars.get(i)) + " ";
 				}
+				
 				System.out.println("Solution is :  " + solution);
 			}
 			return ;
